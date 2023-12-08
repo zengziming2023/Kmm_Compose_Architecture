@@ -15,7 +15,7 @@ kotlin {
             }
         }
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -26,9 +26,9 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
-        
+
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
@@ -40,6 +40,15 @@ kotlin {
             implementation(compose.ui)
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
+            // Multiplatform
+            // Navigator
+            implementation(libs.voyager.navigator)
+            // BottomSheetNavigator
+            implementation(libs.voyager.bottom.sheet.navigator)
+            // TabNavigator
+            implementation(libs.voyager.tab.navigator)
+            // Transitions
+            implementation(libs.voyager.transitions)
         }
     }
 }
